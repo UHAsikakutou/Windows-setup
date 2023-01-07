@@ -1,5 +1,5 @@
 # Windows-setup
-Scripts and lists of packages for Windows setup
+Scripts and lists of packages for Windows setup  
 自分用Windowsの環境構築の手順とスクリプト
 ## 手順
 main.batをお読みください
