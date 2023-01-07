@@ -8,12 +8,12 @@ if %ERRORLEVEL% equ 0 (
   echo 管理者権限で実行していません。管理者権限がない場合一部パッケージのインストールが行えません。
   SET /P selected="管理者権限で続行しますか[U]？強制的に続行しますか[F]？中断して終了しますか[E]？"
   if /i {%selected%}=={u} (goto :upgrade)
-  if /i {%selected%}=={f} (goto :start)
+  if /i {%selected%}=={f} (goto :startinstall)
   if /i {%selected%}=={e} (goto :no)
   :upgrade
   powershell start-process %~0 -verb runas
 )
-:start
+:startinstall
 SET /P selected="必要なパッケージ類のインストールを開始します。　実行にはインターネット接続が必要です。実行しますか[Y/N]？"
 if /i {%selected%}=={y} (goto :yes)
 if /i {%selected%}=={yes} (goto :yes)
